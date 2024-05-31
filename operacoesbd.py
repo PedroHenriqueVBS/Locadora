@@ -26,9 +26,9 @@ def listarBancoDados(conexao, sql, params=None):
     finally:
         cursor.close()
 
-def atualizarBancoDados(connection,sql, dados, params=None):
+def atualizarBancoDados(connection,sql, params):
       cursor = connection.cursor()
-      cursor.execute(sql, dados)
+      cursor.execute(sql, params)
       connection.commit()
       linhasAfetadas = cursor.rowcount
       cursor.close()
